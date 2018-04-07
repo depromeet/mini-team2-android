@@ -6,23 +6,49 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
 import com.github.depromeet.a24cafe.R;
+import com.github.depromeet.a24cafe.ui.test.Presenter.ContentContract;
+import com.github.depromeet.a24cafe.ui.test.Presenter.ContentPresenter;
 import com.skt.Tmap.TMapView;
 
-public class ContentActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class ContentActivity extends AppCompatActivity implements ContentContract.View {
     private static final String TAG = ContentActivity.class.getSimpleName();
-    private LinearLayout tMapLayout;
+
+    @BindView(R.id.tMapLayout)
+    LinearLayout tMapLayout;
+
+    private ContentContract.Presenter presenter;
     private TMapView tMapView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_activity);
-
-        tMapLayout = findViewById(R.id.tMapLayout);
+        ButterKnife.bind(this);
 
         tMapView = new TMapView(this);
-        tMapView.setSKTMapApiKey("3842ec01-f3eb-4d40-9408-1b464b067e43");
+        tMapView.setSKTMapApiKey(getString(R.string.tmap_key));
         tMapLayout.addView(tMapView);
+
+        presenter = new ContentPresenter(this);
+        presenter.attachView(this);
+        init();
+    }
+
+    private void init() {
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.detachView();
+    }
+
+    @Override
+    public void toast(String msg) {
 
     }
 }
