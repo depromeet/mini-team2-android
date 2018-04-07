@@ -1,9 +1,10 @@
 package com.github.depromeet.a24cafe.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
 import com.github.depromeet.a24cafe.R
+import com.github.depromeet.a24cafe.ui.main.MainActivity
 
 class SplashActivity : AppCompatActivity(), Contract.View {
 
@@ -21,9 +22,9 @@ class SplashActivity : AppCompatActivity(), Contract.View {
 
     override fun finishSplash() {
 
-       /* val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        finish()*/
-        Toast.makeText(this, "a", Toast.LENGTH_SHORT).show()
+        finish()
+       // Toast.maketext(this, "a", Toast.LENGTH_SHORT).show()
     }
 }

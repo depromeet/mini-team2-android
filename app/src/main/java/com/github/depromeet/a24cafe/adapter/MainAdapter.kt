@@ -16,6 +16,10 @@ class MainAdapter(val context: Context, val itemClick: () -> Unit): RecyclerView
     init {
         item = ArrayList()
 
+        for(i in 0..10){
+            item.add(i, dummy("ds"))
+        }
+
 
     }
 
@@ -26,6 +30,7 @@ class MainAdapter(val context: Context, val itemClick: () -> Unit): RecyclerView
     }
 
     override fun getItemCount(): Int {
+
         if(item.size >0) return item.size
         else return 0
     }
