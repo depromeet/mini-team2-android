@@ -40,7 +40,5 @@ class MainActivity : AppCompatActivity(), Contract.View {
         }
 
         main_recyclerview.adapter = adapter
-
-
     }
 }
