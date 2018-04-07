@@ -7,7 +7,7 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import com.github.depromeet.a24cafe.R
 import com.github.depromeet.a24cafe.adapter.MainAdapter
-import com.github.depromeet.a24cafe.ui.test.ContentActivity
+import com.github.depromeet.a24cafe.ui.metroContent.MetroContentActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), Contract.View {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), Contract.View {
         main_recyclerview.scrollToPosition(0)
 
         val adapter = MainAdapter(this) {
-            val intent = Intent(this, ContentActivity::class.java)
+            val intent = Intent(this, MetroContentActivity::class.java)
             startActivity(intent)
 
         }
