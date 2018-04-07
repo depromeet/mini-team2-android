@@ -17,6 +17,7 @@ class SplashActivity : AppCompatActivity(), Contract.View {
 
         presenter = SplashPresenter()
         presenter.init(this)
+
     }
 
     override fun finishSplash() {
@@ -33,5 +34,7 @@ class SplashActivity : AppCompatActivity(), Contract.View {
             }
         }
         mDelayHandler = Handler()
+        mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
+
     }
 }
