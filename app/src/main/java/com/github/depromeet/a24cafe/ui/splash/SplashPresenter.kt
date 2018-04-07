@@ -4,6 +4,7 @@ class SplashPresenter : Contract.Presenter {
 
     private lateinit var view: Contract.View
 
+
     override fun init(view: Contract.View) {
         this.view = view
 
@@ -11,15 +12,6 @@ class SplashPresenter : Contract.Presenter {
     }
 
     private fun intentActivity() {
-
-
-        try{
-            Thread.sleep(2000)
-
-        }catch (e: InterruptedException){
-            e.printStackTrace()
-        }
-
         view.finishSplash()
     }
 }

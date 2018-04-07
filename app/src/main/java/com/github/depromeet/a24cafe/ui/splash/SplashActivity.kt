@@ -2,12 +2,12 @@ package com.github.depromeet.a24cafe.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import com.github.depromeet.a24cafe.R
 import com.github.depromeet.a24cafe.ui.main.MainActivity
 
 class SplashActivity : AppCompatActivity(), Contract.View {
-
 
     private lateinit var presenter: SplashPresenter
 
@@ -17,14 +17,21 @@ class SplashActivity : AppCompatActivity(), Contract.View {
 
         presenter = SplashPresenter()
         presenter.init(this)
-
     }
 
     override fun finishSplash() {
 
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish()
-       // Toast.maketext(this, "a", Toast.LENGTH_SHORT).show()
+        var mDelayHandler: Handler? = null
+        val SPLASH_DELAY: Long = 3000
+
+        val mRunnable: Runnable = Runnable {
+            if (!isFinishing) {
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+        mDelayHandler = Handler()
     }
 }
