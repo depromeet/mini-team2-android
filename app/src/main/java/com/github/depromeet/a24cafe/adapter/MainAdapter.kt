@@ -16,10 +16,9 @@ class MainAdapter(val context: Context, val itemClick: () -> Unit): RecyclerView
     init {
         item = ArrayList()
 
-        for(i in 0..10){
-            item.add(i, dummy("ds"))
-        }
-
+        item.add( dummy("홍대"))
+        item.add( dummy("강남"))
+        item.add( dummy("신림"))
 
     }
 
