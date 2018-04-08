@@ -11,17 +11,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
         android:layout_marginTop="23dp"
         android:gravity="center_horizontal"
         android:text="지하철역을 선택해주세요"
-        />
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
         android:scrollbars="none" />
 
 </LinearLayout>

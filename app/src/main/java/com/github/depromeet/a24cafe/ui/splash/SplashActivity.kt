@@ -13,6 +13,7 @@ class SplashActivity : AppCompatActivity(), Contract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(android.R.style.Theme_NoTitleBar_Fullscreen)
         setContentView(R.layout.activity_splash)
 
         presenter = SplashPresenter()
