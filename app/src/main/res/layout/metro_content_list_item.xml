@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ssomai.android.scalablelayout.ScalableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:scale_base_width="104"
+    app:scale_base_height="42"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        app:scale_width="100"
+        app:scale_height="42"
+        app:scale_top="4">
+
+        <com.ssomai.android.scalablelayout.ScalableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:scale_base_width="104"
+            app:scale_base_height="27">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:scale_width="104"
+                app:scale_height="27"
+                android:src="@drawable/gangnam"
+                android:scaleType="fitXY"/>
+        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+        <com.ssomai.android.scalablelayout.ScalableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:scale_base_width="104"
+            app:scale_base_height="11"
+            android:background="@color/colorWhite">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="metroContent"
+                app:scale_textsize="6"
+                app:scale_width="104"
+                app:scale_height="11"
+                app:scale_left="5"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:id="@+id/metro_content_list_cafe_name"/>
+        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+    </LinearLayout>
+
+</com.ssomai.android.scalablelayout.ScalableLayout>

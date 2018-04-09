@@ -1,52 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--<LinearLayout
+        <com.ssomai.android.scalablelayout.ScalableLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.3"
-            android:orientation="vertical"
-            android:id="@+id/tMapLayout">
+            android:layout_height="wrap_content"
+            app:scale_base_width="120"
+            app:scale_base_height="21">
 
-        </LinearLayout>-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:orientation="horizontal">
             <TextView
+                android:id="@+id/metro_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center|top"
+                android:gravity="center|top"
                 android:text="default"
-                android:id="@+id/metro_name"
-                android:layout_gravity="center"
-                android:gravity="center"/>
-        </LinearLayout>
-        
-        <LinearLayout
+                android:textColor="@color/colorGray"
+                app:scale_textsize="8"
+                app:scale_top="4"
+                app:scale_width="115"
+                app:scale_height="17"/>
+
+        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+        <com.ssomai.android.scalablelayout.ScalableLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.9"
-            android:orientation="vertical"
-            android:background="#e3e3e3"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp">
+            android:layout_height="wrap_content"
+            app:scale_base_width="120"
+            app:scale_base_height="190">
+
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center|top"
+                app:scale_width="111"
+                app:scale_height="180"
+                android:background="@drawable/rounding">
+
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/metro_content_list">
-
-                </android.support.v7.widget.RecyclerView>
+                    android:id="@+id/metro_content_list" />
             </ScrollView>
-        </LinearLayout>
+        </com.ssomai.android.scalablelayout.ScalableLayout>
     </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/moon_button"/>
 
 </RelativeLayout>
