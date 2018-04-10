@@ -31,7 +31,6 @@ class MainPresenter : Contract.Presenter {
         val adapter = MainAdapter(context) {
             val intent = Intent(context, MetroContentActivity::class.java)
             context.startActivity(intent)
-
         }
 
         view.setList().adapter = adapter
@@ -39,7 +38,6 @@ class MainPresenter : Contract.Presenter {
         mainAdapterView = adapter
 
         getData()
-
     }
     // 데이터 받아오기
     private fun getData() {
