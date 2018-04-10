@@ -45,12 +45,12 @@ public class MetroViewHolder extends RecyclerView.ViewHolder {
 
 
 
-    public void onBind(MetroContent metroContent, final int position) {
+    public void onBind(final MetroContent metroContent, final int position) {
         tvCafeName.setText(metroContent.getTitle());
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onItemClickListener.onItemClick(position);
+                onItemClickListener.onItemClick(metroContent, position);
             }
         });
 

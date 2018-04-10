@@ -11,14 +11,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface RetrofitService {
-    @GET("/api/boards")
-    Call<List<MetroContent>> getBoards();
-
-    @POST("/api/boards")
-    Call<MetroContent> postBoard(
-            @Body MetroContent metroContent
-    );
-
     @GET("/api/boards/{boardId}/posts")
     Call<List<MetroContent>> getContents(
             @Path("boardId") int boardId
