@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    tools:context="com.github.depromeet.a24cafe.ui.content.ContentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/content_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:textColor="#27284a"
+            android:textSize="15sp"
+            tools:text="그린클라우드" />
+
+        <ImageView
+            android:id="@+id/content_location_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="14dp"
+            tools:background="@drawable/gangnam" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:background="@null">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@null"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    tools:background="@drawable/map"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="02-3144-6621"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#3f3b5b"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@null"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    tools:background="@drawable/map"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="09:00 ~ 04:00"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#3f3b5b"
+                    android:textSize="12sp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@null"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    tools:background="@drawable/map"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="8, 11번 출구"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#3f3b5b"
+                    android:textSize="12sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--지도자리-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+
+
+        <!--Content-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="홍대 8번이나 6번출구 보도로 11분 정도 걸어가시면 됩니다!!라사라 패션학원 바로 옆이에요. 탁자가 엄청 넓어서 노트북 작업하기 편해요!!! 팀플하기도 되게 좋구요. 옆에 패션학원도 있어서 패디과분들도 작업하시기 좋습니당."
+            android:textSize="12sp"
+            android:textColor="#27284a"
+            android:layout_margin="15dp"/>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
