@@ -30,6 +30,7 @@ class MainPresenter : Contract.Presenter {
 
         val adapter = MainAdapter(context) {
             val intent = Intent(context, MetroContentActivity::class.java)
+            intent.putExtra("boardId", it)
             context.startActivity(intent)
 
         }
