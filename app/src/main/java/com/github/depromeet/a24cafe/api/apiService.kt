@@ -7,7 +7,7 @@ interface apiService {
 
     // 메인 액티비티 리스트
     @GET("api/boards")
-    fun getMainBoardList(): Observable<mainItem>
+    fun getMainBoardList(): Observable<MutableList<mainItem>>
 
     data class mainItem(val id: Int, val name: String)
 
