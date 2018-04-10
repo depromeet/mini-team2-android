@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">24cafe</string>
     <string name="tmap_key">3842ec01-f3eb-4d40-9408-1b464b067e43</string>
-    <string name="host">http://www.mocky.io/</string>
+    <string name="host">http://13.125.232.55:8080/</string>
 </resources>

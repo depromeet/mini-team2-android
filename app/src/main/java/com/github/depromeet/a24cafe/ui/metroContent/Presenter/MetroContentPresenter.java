@@ -1,13 +1,19 @@
 package com.github.depromeet.a24cafe.ui.metroContent.Presenter;
 
 import android.content.Context;
+import android.util.Log;
 
+import com.github.depromeet.a24cafe.model.MetroContent;
 import com.github.depromeet.a24cafe.ui.metroContent.Adapter.MetroAdapterContract;
+import com.github.depromeet.a24cafe.ui.metroContent.Callback.MetroContentCallback;
+import com.github.depromeet.a24cafe.ui.metroContent.Callback.OnItemClickListener;
 import com.github.depromeet.a24cafe.ui.metroContent.Model.RetrofitModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MetroContentPresenter implements MetroContentContract.Presenter {
+public class MetroContentPresenter implements MetroContentContract.Presenter, MetroContentCallback.RetrofitCallback,
+        OnItemClickListener {
     private static final String TAG = MetroContentPresenter.class.getSimpleName();
 
     private Context context;
@@ -20,6 +26,7 @@ public class MetroContentPresenter implements MetroContentContract.Presenter {
     public MetroContentPresenter(Context context) {
         this.context = context;
         this.model = new RetrofitModel(context);
+        this.model.setCallback(this);
     }
 
     @Override
@@ -35,6 +42,7 @@ public class MetroContentPresenter implements MetroContentContract.Presenter {
     @Override
     public void setListViewCallback(MetroAdapterContract.View listViewCallback) {
         this.listViewCallback = listViewCallback;
+        this.listViewCallback.setOnClickListener(this);
     }
 
     @Override
@@ -45,5 +53,26 @@ public class MetroContentPresenter implements MetroContentContract.Presenter {
     @Override
     public void loadItems(ArrayList items) {
         listModelCallback.setItems(items);
+    }
+
+    @Override
+    public void connect() {
+        model.getContents();
+    }
+
+    @Override
+    public void onConnectSuccess(List<MetroContent> items) {
+        ArrayList list = new ArrayList(items);
+        loadItems(list);
+    }
+
+    @Override
+    public void onConnectFailure() {
+        view.toast("서버연결 오류입니다.");
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Log.d(TAG, "click " + position);
     }
 }

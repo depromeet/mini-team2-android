@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface RetrofitService {
     @GET("/api/boards")
@@ -18,5 +19,8 @@ public interface RetrofitService {
             @Body MetroContent metroContent
     );
 
-
+    @GET("/api/boards/{boardId}/posts")
+    Call<List<MetroContent>> getContents(
+            @Path("boardId") int boardId
+    );
 }

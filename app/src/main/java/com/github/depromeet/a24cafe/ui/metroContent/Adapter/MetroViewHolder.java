@@ -3,7 +3,9 @@ package com.github.depromeet.a24cafe.ui.metroContent.Adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.depromeet.a24cafe.R;
@@ -19,6 +21,8 @@ public class MetroViewHolder extends RecyclerView.ViewHolder{
     private Context context;
     private OnItemClickListener onItemClickListener;
 
+    @BindView(R.id.metro_content_list_linear)
+    LinearLayout linearLayout; // 리스트 아이템 전체 view
     @BindView(R.id.metro_content_list_cafe_name)
     TextView tvCafeName;
 
@@ -32,7 +36,13 @@ public class MetroViewHolder extends RecyclerView.ViewHolder{
     }
 
 
-    public void onBind(MetroContent metroContent, int position) {
-        tvCafeName.setText(metroContent.getCafeName());
+    public void onBind(MetroContent metroContent, final int position) {
+        tvCafeName.setText(metroContent.getTitle());
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onItemClick(position);
+            }
+        });
     }
 }

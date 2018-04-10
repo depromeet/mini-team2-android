@@ -6,6 +6,10 @@ import android.util.Log;
 import com.github.depromeet.a24cafe.R;
 import com.github.depromeet.a24cafe.model.MetroContent;
 import com.github.depromeet.a24cafe.retrofit.RetrofitService;
+import com.github.depromeet.a24cafe.ui.metroContent.Callback.MetroContentCallback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,6 +22,7 @@ public class RetrofitModel {
     private Retrofit retrofit;
     private Context context;
     private RetrofitService retrofitService;
+    private MetroContentCallback.RetrofitCallback callback;
 
     public RetrofitModel(Context context) {
         this.context = context;
@@ -26,6 +31,31 @@ public class RetrofitModel {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         retrofitService = retrofit.create(RetrofitService.class);
+    }
+
+    public void setCallback(MetroContentCallback.RetrofitCallback callback) {
+        this.callback = callback;
+    }
+
+    public void getContents() {
+        Call<List<MetroContent>> call = retrofitService.getContents(1);
+        call.enqueue(new Callback<List<MetroContent>>() {
+            @Override
+            public void onResponse(Call<List<MetroContent>> call, Response<List<MetroContent>> response) {
+                List<MetroContent> items = response.body();
+
+                if (items == null)
+                    return;
+
+                callback.onConnectSuccess(items);
+            }
+
+            @Override
+            public void onFailure(Call<List<MetroContent>> call, Throwable t) {
+                t.printStackTrace();
+                callback.onConnectFailure();
+            }
+        });
     }
 
     public void getTest() {
