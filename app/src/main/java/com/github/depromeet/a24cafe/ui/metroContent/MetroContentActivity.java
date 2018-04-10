@@ -1,15 +1,19 @@
 package com.github.depromeet.a24cafe.ui.metroContent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.depromeet.a24cafe.R;
 import com.github.depromeet.a24cafe.model.MetroContent;
+import com.github.depromeet.a24cafe.ui.content.ContentActivity;
 import com.github.depromeet.a24cafe.ui.metroContent.Adapter.MetroAdapter;
 import com.github.depromeet.a24cafe.ui.metroContent.Presenter.MetroContentContract;
 import com.github.depromeet.a24cafe.ui.metroContent.Presenter.MetroContentPresenter;
@@ -22,6 +26,8 @@ import butterknife.ButterKnife;
 public class MetroContentActivity extends AppCompatActivity implements MetroContentContract.View {
     private static final String TAG = MetroContentActivity.class.getSimpleName();
 
+    @BindView(R.id.metro_content_add_btn)
+    ImageView btnContent;
     @BindView(R.id.metro_name)
     TextView tvMetroName;
     @BindView(R.id.metro_content_list)
@@ -40,6 +46,13 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         tMapLayout.addView(tMapView);*/
 
         init();
+
+        btnContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     private void init() {
@@ -56,6 +69,11 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         presenter.attachView(this);
         presenter.setListModelCallback(adapter);
         presenter.setListViewCallback(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         presenter.connect();
     }
 
@@ -63,6 +81,13 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
     protected void onDestroy() {
         super.onDestroy();
         presenter.detachView();
+    }
+
+    @Override
+    public void startContentActivity(MetroContent item) {
+        Intent intent = new Intent(this, ContentActivity.class);
+        intent.putExtra("MetroContent", item);
+        startActivity(intent);
     }
 
     @Override
