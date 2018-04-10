@@ -1,6 +1,8 @@
 package com.github.depromeet.a24cafe.model;
 
-public class MetroContent {
+import java.io.Serializable;
+
+public class MetroContent implements Serializable {
     private int id;
     private int boardId;
     private String title;

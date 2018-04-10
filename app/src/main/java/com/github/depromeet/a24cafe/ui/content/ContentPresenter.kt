@@ -60,7 +60,8 @@ class ContentPresenter : Contract.Presenter {
         disposables += api.getContentData(1, 1)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    view.setText(it.title, it.content, it.createdAt)
+                    val time: String? = it.openedAt + " - " + it.closedAt
+                    view.setText(it.title, it.content, it.createdAt, it.phone, time, it.nearestExit)
                 }) {
                     it.printStackTrace()
                 }

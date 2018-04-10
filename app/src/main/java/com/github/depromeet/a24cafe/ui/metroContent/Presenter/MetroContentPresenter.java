@@ -72,7 +72,8 @@ public class MetroContentPresenter implements MetroContentContract.Presenter, Me
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void onItemClick(MetroContent item, int position) {
         Log.d(TAG, "click " + position);
+        view.startContentActivity(item);
     }
 }
