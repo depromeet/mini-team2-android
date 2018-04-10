@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:scale_base_width="104"
+    android:id="@+id/metro_click"
     app:scale_base_height="42"
     android:orientation="vertical">
     <LinearLayout

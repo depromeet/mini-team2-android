@@ -51,6 +51,7 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         adapter = new MetroAdapter(this);
         recyclerView.setAdapter(adapter);
 
+
         presenter = new MetroContentPresenter(this);
         presenter.attachView(this);
         presenter.setListModelCallback(adapter);
