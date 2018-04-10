@@ -2,23 +2,20 @@ package com.github.depromeet.a24cafe.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.github.depromeet.a24cafe.R
-import com.github.depromeet.a24cafe.model.dummy
+import com.github.depromeet.a24cafe.api.apiService
 import com.github.depromeet.a24cafe.ui.main.MainViewHolder
 
 class MainAdapter(val context: Context, val itemClick: () -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>(), MainAdapterContract.View, MainAdapterContract.Model {
 
 
-    private lateinit var item: MutableList<dummy>
+    private lateinit var item: MutableList<apiService.mainItem>
 
     init {
         item = ArrayList()
-
-        item.add( dummy("홍대"))
-        item.add( dummy("강남"))
-        item.add( dummy("신림"))
 
     }
 
@@ -29,21 +26,20 @@ class MainAdapter(val context: Context, val itemClick: () -> Unit): RecyclerView
     }
 
     override fun getItemCount(): Int {
-
-        if(item.size >0) return item.size
-        else return 0
+        if(item.isNotEmpty()) return item.size else return 0
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
         (holder as MainViewHolder).bind(item, position, context)
     }
 
-    override fun addItem() {
-
+    override fun addItem(e: MutableList<apiService.mainItem>) {
+        item.addAll(e)
+        Log.e("add", "${item.size}")
     }
 
     override fun notifyChange() {
-
+        notifyDataSetChanged()
     }
 
 }
