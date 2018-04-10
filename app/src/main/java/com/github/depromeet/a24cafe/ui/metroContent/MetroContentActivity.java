@@ -51,16 +51,12 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         adapter = new MetroAdapter(this);
         recyclerView.setAdapter(adapter);
 
-        ArrayList<MetroContent> items = new ArrayList<>();
-        items.add(new MetroContent("그린클라우드", 1));
-        items.add(new MetroContent("그린클라우드", 2));
-        items.add(new MetroContent("그린클라우드", 3));
 
         presenter = new MetroContentPresenter(this);
         presenter.attachView(this);
         presenter.setListModelCallback(adapter);
         presenter.setListViewCallback(adapter);
-        presenter.loadItems(items);
+        presenter.connect();
     }
 
     @Override

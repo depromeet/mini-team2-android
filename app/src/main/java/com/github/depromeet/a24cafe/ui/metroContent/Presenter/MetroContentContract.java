@@ -19,5 +19,7 @@ public interface MetroContentContract {
         void setListModelCallback(MetroAdapterContract.Model callback);
 
         void loadItems(ArrayList items);
+
+        void connect();
     }
 }
