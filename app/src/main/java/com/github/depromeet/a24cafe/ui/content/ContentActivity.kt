@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.activity_content.*
 
 class ContentActivity : AppCompatActivity(), Contract.View {
 
-
     private lateinit var presenter: ContentPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +17,15 @@ class ContentActivity : AppCompatActivity(), Contract.View {
         init()
     }
 
-    private fun init(){
+    private fun init() {
         presenter = ContentPresenter()
         presenter.init(this, this)
         presenter.mapSetting()
+        presenter.getData()
+
     }
 
-    private fun getContentId(): Int{
+    private fun getContentId(): Int {
         return intent.getIntExtra("id", 0)
     }
 
@@ -32,8 +33,18 @@ class ContentActivity : AppCompatActivity(), Contract.View {
         return content_map
     }
 
+    override fun setText(title: String, content: String, createdAt: String) {
+        runOnUiThread {
+            content_title.text = title
+            content_content.text = content
+            content_submit_time.text = createdAt + " 작성"
+        }
+    }
+
+
     override fun onStop() {
         super.onStop()
         finish()
     }
+
 }
