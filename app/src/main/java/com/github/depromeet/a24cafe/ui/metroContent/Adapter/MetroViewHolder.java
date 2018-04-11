@@ -9,7 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.depromeet.a24cafe.R;
+
 import com.github.depromeet.a24cafe.model.CafeContent;
+
 import com.github.depromeet.a24cafe.ui.metroContent.Callback.OnItemClickListener;
 import com.ssomai.android.scalablelayout.ScalableLayout;
 
