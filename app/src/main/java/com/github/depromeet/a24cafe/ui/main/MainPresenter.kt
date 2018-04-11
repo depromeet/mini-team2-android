@@ -42,7 +42,6 @@ class MainPresenter : Contract.Presenter {
     }
     // 데이터 받아오기
     private fun getData() {
-
         disposables += api.getMainBoardList()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

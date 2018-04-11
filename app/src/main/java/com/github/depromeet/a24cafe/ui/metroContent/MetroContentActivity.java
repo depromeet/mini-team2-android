@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,7 +50,9 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         btnContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MetroContentActivity.this, WriteContentActivity.class));
+                Intent intent = new Intent(MetroContentActivity.this, WriteContentActivity.class);
+                intent.putExtra("boardId", getBoardId());
+                startActivity(intent);
             }
         });
     }
