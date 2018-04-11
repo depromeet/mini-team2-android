@@ -35,8 +35,8 @@ public class RetrofitModel {
         this.callback = callback;
     }
 
-    public void getContents() {
-        Call<List<CafeContent>> call = retrofitService.getContents(1);
+    public void getContents(int boardId) {
+        Call<List<CafeContent>> call = retrofitService.getContents(boardId);
         call.enqueue(new Callback<List<CafeContent>>() {
             @Override
             public void onResponse(Call<List<CafeContent>> call, Response<List<CafeContent>> response) {
@@ -56,19 +56,5 @@ public class RetrofitModel {
         });
     }
 
-    public void getTest() {
-       /* Call<CafeContent> call = retrofitService.getBoards();
-        call.enqueue(new Callback<CafeContent>() {
-            @Override
-            public void onResponse(Call<CafeContent> call, Response<CafeContent> response) {
-                CafeContent result = response.body();
-                Log.d(TAG, result.getMessage());
-            }
 
-            @Override
-            public void onFailure(Call<CafeContent> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });*/
-    }
 }
