@@ -87,7 +87,6 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
 
     @OnClick(R.id.content_write_btn)
     public void writeBtnClick(View view) {
-
         if (editCafeName.getText().toString().equals("")) {
             toast("카페 이름을 입력해주세요");
             return;
@@ -126,16 +125,20 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
             return;
         }
 
+        if (lat == 0.0 || lon == 0.0) {
+            toast("카페 위치를 선택해 주세요.");
+            return;
+        }
+
         CafeContent content = new CafeContent(
                 1,
                 editCafeName.getText().toString(),
                 editContent.getText().toString(),
-                0.0, 0.0,
+                lat, lon,
                 getDate(),
                 startTime, endTime,
                 "00012341234",
                 Integer.parseInt(editNearestExit.getText().toString()));
-
         presenter.connect(content);
     }
 
@@ -149,8 +152,14 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
         Log.d(TAG, "lat : " + tMapPoint.getLatitude());
         Log.d(TAG, "lon : " + tMapPoint.getLongitude());
 
-        arrayList.clear();
+        TMapMarkerItem mapMarkerItem = new TMapMarkerItem();
+        mapMarkerItem.setPosition(0.5f, 1.0f);
+        mapMarkerItem.setTMapPoint(tMapPoint);
+        tMapView.removeAllMarkerItem();
+        tMapView.addMarkerItem("marker", mapMarkerItem);
 
+        lat = tMapPoint.getLatitude();
+        lon = tMapPoint.getLongitude();
     }
 
     @Override

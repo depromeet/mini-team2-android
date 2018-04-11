@@ -34,15 +34,15 @@ public class RetrofitModel {
     }
 
     public void writeToServer(CafeContent content) {
-        Call<CafeContent> call = retrofitService.postContent(1, content);
-        call.enqueue(new Callback<CafeContent>() {
+        Call<Void> call = retrofitService.postContent(1, content);
+        call.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<CafeContent> call, Response<CafeContent> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 callback.onSuccess();
             }
 
             @Override
-            public void onFailure(Call<CafeContent> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 t.printStackTrace();
                 callback.onFailure();
             }
