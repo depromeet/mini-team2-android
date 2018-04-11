@@ -1,53 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.ssomai.android.scalablelayout.ScalableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/metro_click"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:scale_base_width="104"
-    android:id="@+id/metro_click"
+    android:orientation="vertical"
     app:scale_base_height="42"
-    android:orientation="vertical">
+    app:scale_base_width="104">
+
     <LinearLayout
+        android:id="@+id/metro_content_list_linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_gravity="center"
-        app:scale_width="100"
+        android:orientation="vertical"
         app:scale_height="42"
         app:scale_top="4"
-        android:id="@+id/metro_content_list_linear">
+        app:scale_width="100">
 
         <com.ssomai.android.scalablelayout.ScalableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:scale_base_width="104"
-            app:scale_base_height="27">
+            app:scale_base_height="27"
+            app:scale_base_width="104">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:scale_width="104"
-                app:scale_height="27"
+                android:scaleType="fitXY"
                 android:src="@drawable/gangnam"
-                android:scaleType="fitXY"/>
+                app:scale_height="27"
+                app:scale_width="104" />
+
+            <FrameLayout
+                android:id="@+id/metro_clickframe_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#99000000"
+                android:visibility="gone"
+                app:scale_height="27"
+                app:scale_width="104">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="10dp"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/metro_click_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        tools:text="매일 09:00 ~ 04:00" />
+
+                    <TextView
+                        android:id="@+id/metro_click_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        tools:text="아메리카노 4,500원 부터~" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
         </com.ssomai.android.scalablelayout.ScalableLayout>
 
         <com.ssomai.android.scalablelayout.ScalableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:scale_base_width="104"
+            android:background="@color/colorWhite"
             app:scale_base_height="11"
-            android:background="@color/colorWhite">
+            app:scale_base_width="104">
+
             <TextView
+                android:id="@+id/metro_content_list_cafe_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="cafeContent"
-                app:scale_textsize="6"
-                app:scale_width="104"
-                app:scale_height="11"
-                app:scale_left="5"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_vertical"
-                android:id="@+id/metro_content_list_cafe_name"/>
+                android:text="cafeContent"
+                app:scale_height="11"
+                app:scale_left="5"
+                app:scale_textsize="6"
+                app:scale_width="104" />
+
+            <FrameLayout
+                android:id="@+id/metro_clickframe_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#99000000"
+                android:visibility="gone"
+                app:scale_height="11"
+                app:scale_width="104"></FrameLayout>
         </com.ssomai.android.scalablelayout.ScalableLayout>
 
     </LinearLayout>
