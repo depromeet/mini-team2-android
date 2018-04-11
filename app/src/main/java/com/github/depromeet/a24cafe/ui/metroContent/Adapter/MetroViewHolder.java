@@ -68,7 +68,7 @@ public class MetroViewHolder extends RecyclerView.ViewHolder {
                     case MotionEvent.ACTION_UP:
                         frame_top.setVisibility(View.GONE);
                         frame_bottom.setVisibility(View.GONE);
-                        if ((event.getEventTime() - event.getDownTime()) < 2000)
+                        if ((event.getEventTime() - event.getDownTime()) < 1000)
                             linearLayout.performClick();
                         break;
                     case MotionEvent.ACTION_CANCEL:
