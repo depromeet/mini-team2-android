@@ -1,7 +1,6 @@
 package com.github.depromeet.a24cafe.ui.metroContent.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.depromeet.a24cafe.R;
-import com.github.depromeet.a24cafe.model.MetroContent;
-import com.github.depromeet.a24cafe.ui.content.ContentActivity;
+import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.ui.metroContent.Callback.OnItemClickListener;
 import com.ssomai.android.scalablelayout.ScalableLayout;
 
@@ -45,12 +43,12 @@ public class MetroViewHolder extends RecyclerView.ViewHolder {
 
 
 
-    public void onBind(final MetroContent metroContent, final int position) {
-        tvCafeName.setText(metroContent.getTitle());
+    public void onBind(final CafeContent cafeContent, final int position) {
+        tvCafeName.setText(cafeContent.getTitle());
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onItemClickListener.onItemClick(metroContent, position);
+                onItemClickListener.onItemClick(cafeContent, position);
             }
         });
 

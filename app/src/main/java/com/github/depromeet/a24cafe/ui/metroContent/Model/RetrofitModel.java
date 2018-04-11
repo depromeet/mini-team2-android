@@ -1,14 +1,12 @@
 package com.github.depromeet.a24cafe.ui.metroContent.Model;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.github.depromeet.a24cafe.R;
-import com.github.depromeet.a24cafe.model.MetroContent;
+import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.retrofit.RetrofitService;
 import com.github.depromeet.a24cafe.ui.metroContent.Callback.MetroContentCallback;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -38,11 +36,11 @@ public class RetrofitModel {
     }
 
     public void getContents() {
-        Call<List<MetroContent>> call = retrofitService.getContents(1);
-        call.enqueue(new Callback<List<MetroContent>>() {
+        Call<List<CafeContent>> call = retrofitService.getContents(1);
+        call.enqueue(new Callback<List<CafeContent>>() {
             @Override
-            public void onResponse(Call<List<MetroContent>> call, Response<List<MetroContent>> response) {
-                List<MetroContent> items = response.body();
+            public void onResponse(Call<List<CafeContent>> call, Response<List<CafeContent>> response) {
+                List<CafeContent> items = response.body();
 
                 if (items == null)
                     return;
@@ -51,7 +49,7 @@ public class RetrofitModel {
             }
 
             @Override
-            public void onFailure(Call<List<MetroContent>> call, Throwable t) {
+            public void onFailure(Call<List<CafeContent>> call, Throwable t) {
                 t.printStackTrace();
                 callback.onConnectFailure();
             }
@@ -59,16 +57,16 @@ public class RetrofitModel {
     }
 
     public void getTest() {
-       /* Call<MetroContent> call = retrofitService.getBoards();
-        call.enqueue(new Callback<MetroContent>() {
+       /* Call<CafeContent> call = retrofitService.getBoards();
+        call.enqueue(new Callback<CafeContent>() {
             @Override
-            public void onResponse(Call<MetroContent> call, Response<MetroContent> response) {
-                MetroContent result = response.body();
+            public void onResponse(Call<CafeContent> call, Response<CafeContent> response) {
+                CafeContent result = response.body();
                 Log.d(TAG, result.getMessage());
             }
 
             @Override
-            public void onFailure(Call<MetroContent> call, Throwable t) {
+            public void onFailure(Call<CafeContent> call, Throwable t) {
                 t.printStackTrace();
             }
         });*/
