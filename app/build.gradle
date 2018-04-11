@@ -60,4 +60,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
+    implementation 'gun0912.ted:tedbottompicker:1.1.0'
+    implementation 'gun0912.ted:tedpermission:1.0.3'
+
 }

@@ -1,82 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="370dp"
     android:layout_height="680dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <com.ssomai.android.scalablelayout.ScalableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:scale_base_width="112"
-            app:scale_base_height="205">
+            app:scale_base_height="205"
+            app:scale_base_width="112">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:scale_width="112"
+                android:orientation="vertical"
                 app:scale_height="205"
-                android:orientation="vertical">
-                <com.ssomai.android.scalablelayout.ScalableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:scale_base_width="112"
-                    app:scale_base_height="13">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:scale_width="112"
-                        app:scale_height="13"
-                        app:scale_textsize="6"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="야작 카페 올리기"/>
-                </com.ssomai.android.scalablelayout.ScalableLayout>
+                app:scale_width="112">
 
                 <com.ssomai.android.scalablelayout.ScalableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_base_width="112"
+                    app:scale_base_height="13"
+                    app:scale_base_width="112">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="야작 카페 올리기"
+                        app:scale_height="13"
+                        app:scale_textsize="6"
+                        app:scale_width="112" />
+                </com.ssomai.android.scalablelayout.ScalableLayout>
+
+                <ImageView
+                    android:id="@+id/write_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <com.ssomai.android.scalablelayout.ScalableLayout
+                    android:id="@+id/write_image_tmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#dedede"
                     app:scale_base_height="45"
-                    android:background="#dedede">
+                    app:scale_base_width="112">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:scale_width="112"
+                        android:orientation="vertical"
                         app:scale_height="45"
-                        android:orientation="vertical">
+                        app:scale_width="112">
+
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="112"
-                            app:scale_base_height="30">
+                            app:scale_base_height="30"
+                            app:scale_base_width="112">
+
                             <ImageView
+                                android:id="@+id/uploadbutton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                app:scale_width="112"
+                                android:src="@drawable/cafe"
                                 app:scale_height="25"
                                 app:scale_top="5"
-                                android:src="@drawable/cafe"/>
+                                app:scale_width="112" />
 
                         </com.ssomai.android.scalablelayout.ScalableLayout>
 
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="112"
-                            app:scale_base_height="15">
+                            app:scale_base_height="15"
+                            app:scale_base_width="112">
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="112"
-                                app:scale_height="15"
-                                app:scale_textsize="4"
                                 android:layout_gravity="center"
                                 android:gravity="center"
-                                android:text="이 카페의 사진을 올려주세요"/>
+                                android:text="이 카페의 사진을 올려주세요"
+                                app:scale_height="15"
+                                app:scale_textsize="4"
+                                app:scale_width="112" />
 
                         </com.ssomai.android.scalablelayout.ScalableLayout>
                     </LinearLayout>
@@ -85,45 +102,49 @@
                 <com.ssomai.android.scalablelayout.ScalableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_base_width="112"
-                    app:scale_base_height="40">
+                    app:scale_base_height="40"
+                    app:scale_base_width="112">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:scale_width="103"
-                        app:scale_height="40"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        app:scale_height="40"
+                        app:scale_width="103">
+
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="103"
-                            app:scale_base_height="8">
+                            app:scale_base_height="8"
+                            app:scale_base_width="103">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="103"
-                                app:scale_height="8">
+                                app:scale_height="8"
+                                app:scale_width="103">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="카페명"
+                                    android:layout_alignParentStart="true"
                                     android:layout_centerInParent="true"
-                                    android:layout_alignParentStart="true"/>
+                                    android:text="카페명" />
 
                                 <EditText
+                                    android:id="@+id/content_write_cafe_name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerInParent="true"
+                                    android:background="@null"
+                                    android:gravity="right|center_vertical"
                                     android:hint="카페명을 입력해주세요"
-                                    android:textSize="10dp"
                                     android:maxLength="10"
                                     android:maxLines="1"
-                                    android:gravity="right|center_vertical"
-                                    android:layout_centerInParent="true"
-                                    android:layout_alignParentEnd="true"
-                                    android:background="@null"
-                                    android:id="@+id/content_write_cafe_name"/>
+                                    android:textSize="10dp" />
 
                             </RelativeLayout>
 
@@ -132,33 +153,35 @@
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="103"
-                            app:scale_base_height="8">
+                            app:scale_base_height="8"
+                            app:scale_base_width="103">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="103"
-                                app:scale_height="8">
+                                app:scale_height="8"
+                                app:scale_width="103">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="전화번호"
+                                    android:layout_alignParentStart="true"
                                     android:layout_centerInParent="true"
-                                    android:layout_alignParentStart="true"/>
+                                    android:text="전화번호" />
 
                                 <EditText
+                                    android:id="@+id/content_write_phone"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:hint="전화번호를 입력해주세요"
-                                    android:textSize="10dp"
-                                    android:layout_centerInParent="true"
                                     android:layout_alignParentEnd="true"
+                                    android:layout_centerInParent="true"
                                     android:background="@null"
-                                    android:maxLines="1"
-                                    android:maxLength="11"
-                                    android:inputType="number"
                                     android:gravity="right|center_vertical"
-                                    android:id="@+id/content_write_phone"/>
+                                    android:hint="전화번호를 입력해주세요"
+                                    android:inputType="number"
+                                    android:maxLength="11"
+                                    android:maxLines="1"
+                                    android:textSize="10dp" />
                             </RelativeLayout>
 
                         </com.ssomai.android.scalablelayout.ScalableLayout>
@@ -166,63 +189,69 @@
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="103"
-                            app:scale_base_height="8">
+                            app:scale_base_height="8"
+                            app:scale_base_width="103">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="103"
-                                app:scale_height="8">
+                                app:scale_height="8"
+                                app:scale_width="103">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="영업시간"
+                                    android:layout_alignParentStart="true"
                                     android:layout_centerInParent="true"
-                                    android:layout_alignParentStart="true"/>
+                                    android:text="영업시간" />
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_centerInParent="true"
                                     android:layout_alignParentEnd="true"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_vertical">
+                                    android:layout_centerInParent="true"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
                                     <EditText
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:hint="00"
-                                        android:textSize="10dp"
-                                        android:maxLength="2"
-                                        android:maxLines="1"
-                                        android:inputType="number"
-                                        android:background="@null"
                                         android:id="@+id/content_write_start_time"
-                                        android:layout_gravity="center_vertical" />
-                                    <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
-                                        android:text=":00 - "
-                                        android:textSize="10dp"
                                         android:layout_gravity="center_vertical"
-                                        android:gravity="center_vertical"/>
-                                    <EditText
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:hint="00"
-                                        android:textSize="10dp"
                                         android:background="@null"
+                                        android:hint="00"
+                                        android:inputType="number"
                                         android:maxLength="2"
                                         android:maxLines="1"
-                                        android:inputType="number"
-                                        android:id="@+id/content_write_end_time"
-                                        android:layout_gravity="center_vertical"/>
+                                        android:textSize="10dp" />
+
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
-                                        android:text=":00"
-                                        android:textSize="10dp"
                                         android:layout_gravity="center_vertical"
-                                        android:gravity="center_vertical"/>
+                                        android:gravity="center_vertical"
+                                        android:text=":00 - "
+                                        android:textSize="10dp" />
+
+                                    <EditText
+                                        android:id="@+id/content_write_end_time"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center_vertical"
+                                        android:background="@null"
+                                        android:hint="00"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:maxLines="1"
+                                        android:textSize="10dp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:text=":00"
+                                        android:textSize="10dp" />
                                 </LinearLayout>
 
 
@@ -232,33 +261,35 @@
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="103"
-                            app:scale_base_height="8">
+                            app:scale_base_height="8"
+                            app:scale_base_width="103">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="103"
-                                app:scale_height="8">
+                                app:scale_height="8"
+                                app:scale_width="103">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="인접출구"
+                                    android:layout_alignParentStart="true"
                                     android:layout_centerInParent="true"
-                                    android:layout_alignParentStart="true"/>
+                                    android:text="인접출구" />
 
                                 <EditText
+                                    android:id="@+id/nearestExit"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:hint="가까운 출구를 입력해주세요"
-                                    android:textSize="10dp"
-                                    android:layout_centerInParent="true"
                                     android:layout_alignParentEnd="true"
+                                    android:layout_centerInParent="true"
                                     android:background="@null"
-                                    android:maxLines="1"
-                                    android:maxLength="1"
-                                    android:inputType="number"
                                     android:gravity="right|center_vertical"
-                                    android:id="@+id/nearestExit"/>
+                                    android:hint="가까운 출구를 입력해주세요"
+                                    android:inputType="number"
+                                    android:maxLength="1"
+                                    android:maxLines="1"
+                                    android:textSize="10dp" />
 
                             </RelativeLayout>
 
@@ -267,33 +298,35 @@
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="103"
-                            app:scale_base_height="8">
+                            app:scale_base_height="8"
+                            app:scale_base_width="103">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="103"
-                                app:scale_height="8">
+                                app:scale_height="8"
+                                app:scale_width="103">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="커피가격"
+                                    android:layout_alignParentStart="true"
                                     android:layout_centerInParent="true"
-                                    android:layout_alignParentStart="true"/>
+                                    android:text="커피가격" />
 
                                 <EditText
+                                    android:id="@+id/content_write_coffee_price"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:hint="커피가격을 입력해주세요"
-                                    android:textSize="10dp"
-                                    android:layout_centerInParent="true"
                                     android:layout_alignParentEnd="true"
+                                    android:layout_centerInParent="true"
                                     android:background="@null"
-                                    android:maxLines="1"
-                                    android:maxLength="5"
-                                    android:inputType="number"
                                     android:gravity="right|center_vertical"
-                                    android:id="@+id/content_write_coffee_price"/>
+                                    android:hint="커피가격을 입력해주세요"
+                                    android:inputType="number"
+                                    android:maxLength="5"
+                                    android:maxLines="1"
+                                    android:textSize="10dp" />
                             </RelativeLayout>
 
                         </com.ssomai.android.scalablelayout.ScalableLayout>
@@ -304,78 +337,84 @@
                 <com.ssomai.android.scalablelayout.ScalableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_base_width="112"
-                    app:scale_base_height="40">
+                    app:scale_base_height="40"
+                    app:scale_base_width="112">
 
                     <FrameLayout
+                        android:id="@+id/content_write_map_framelayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:scale_width="112"
                         app:scale_height="40"
-                        android:id="@+id/content_write_map_framelayout">
+                        app:scale_width="112">
+
                         <com.ssomai.android.scalablelayout.ScalableLayout
+                            android:id="@+id/content_write_map_invisible"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="112"
+                            android:visibility="visible"
                             app:scale_base_height="40"
-                            android:id="@+id/content_write_map_invisible"
-                            android:visibility="visible">
+                            app:scale_base_width="112">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="112"
-                                app:scale_height="40"
+                                android:background="#dedede"
                                 android:orientation="vertical"
-                                android:background="#dedede">
+                                app:scale_height="40"
+                                app:scale_width="112">
+
                                 <com.ssomai.android.scalablelayout.ScalableLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    app:scale_base_width="112"
                                     app:scale_base_height="27"
+                                    app:scale_base_width="112"
                                     app:scale_top="4">
+
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        app:scale_width="112"
-                                        app:scale_height="15"
-                                        android:src="@drawable/map"
+                                        android:layout_gravity="bottom"
                                         android:scaleType="fitCenter"
-                                        android:layout_gravity="bottom"/>
+                                        android:src="@drawable/map"
+                                        app:scale_height="15"
+                                        app:scale_width="112" />
 
                                 </com.ssomai.android.scalablelayout.ScalableLayout>
 
                                 <com.ssomai.android.scalablelayout.ScalableLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    app:scale_base_width="112"
-                                    app:scale_base_height="13">
+                                    app:scale_base_height="13"
+                                    app:scale_base_width="112">
+
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        app:scale_width="112"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:text="이 카페의 위치를 올려주세요"
                                         app:scale_height="12"
                                         app:scale_textsize="3"
-                                        android:text="이 카페의 위치를 올려주세요"
-                                        android:layout_gravity="center"
-                                        android:gravity="center"/>
+                                        app:scale_width="112" />
 
                                 </com.ssomai.android.scalablelayout.ScalableLayout>
                             </LinearLayout>
                         </com.ssomai.android.scalablelayout.ScalableLayout>
 
                         <com.ssomai.android.scalablelayout.ScalableLayout
+                            android:id="@+id/content_write_map_visible"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="112"
+                            android:visibility="invisible"
                             app:scale_base_height="40"
-                            android:id="@+id/content_write_map_visible"
-                            android:visibility="invisible">
+                            app:scale_base_width="112">
+
                             <RelativeLayout
+                                android:id="@+id/content_write_tmap"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="112"
                                 app:scale_height="40"
-                                android:id="@+id/content_write_tmap">
+                                app:scale_width="112">
 
                             </RelativeLayout>
 
@@ -387,51 +426,58 @@
                 <com.ssomai.android.scalablelayout.ScalableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_base_width="112"
-                    app:scale_base_height="27">
+                    app:scale_base_height="27"
+                    app:scale_base_width="112">
+
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:scale_width="112"
-                        app:scale_height="26">
+                        app:scale_height="26"
+                        app:scale_width="112">
+
                         <com.ssomai.android.scalablelayout.ScalableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:scale_base_width="112"
-                            app:scale_base_height="26">
+                            app:scale_base_height="26"
+                            app:scale_base_width="112">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:scale_width="112"
+                                android:orientation="horizontal"
                                 app:scale_height="26"
-                                android:orientation="horizontal">
+                                app:scale_width="112">
+
                                 <com.ssomai.android.scalablelayout.ScalableLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    app:scale_base_width="85"
-                                    app:scale_base_height="26">
+                                    app:scale_base_height="26"
+                                    app:scale_base_width="85">
+
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        app:scale_width="85"
+                                        android:orientation="vertical"
                                         app:scale_height="26"
-                                        android:orientation="vertical">
+                                        app:scale_width="85">
+
                                         <com.ssomai.android.scalablelayout.ScalableLayout
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            app:scale_base_width="85"
-                                            app:scale_base_height="6">
+                                            app:scale_base_height="6"
+                                            app:scale_base_width="85">
+
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                app:scale_width="85"
-                                                app:scale_height="6"
-                                                app:scale_textsize="5"
-                                                app:scale_left="3"
-                                                android:textStyle="bold"
-                                                android:text="작성자의 평"
                                                 android:layout_gravity="center_horizontal"
-                                                android:gravity="center_vertical"/>
+                                                android:gravity="center_vertical"
+                                                android:text="작성자의 평"
+                                                android:textStyle="bold"
+                                                app:scale_height="6"
+                                                app:scale_left="3"
+                                                app:scale_textsize="5"
+                                                app:scale_width="85" />
 
                                         </com.ssomai.android.scalablelayout.ScalableLayout>
 
@@ -440,21 +486,22 @@
                                             android:layout_height="wrap_content"
                                             app:scale_base_height="19"
                                             app:scale_base_width="85">
+
                                             <EditText
+                                                android:id="@+id/content_write_content"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
-                                                app:scale_width="85"
-                                                app:scale_height="19"
-                                                app:scale_textsize="5"
-                                                app:scale_left="3"
+                                                android:layout_gravity="center_horizontal|top"
+                                                android:background="@null"
+                                                android:gravity="center_vertical|top"
+                                                android:hint="작성자의 평을 적어주세요"
                                                 android:inputType="textMultiLine"
                                                 android:lines="20"
                                                 android:maxLines="20"
-                                                android:hint="작성자의 평을 적어주세요"
-                                                android:layout_gravity="center_horizontal|top"
-                                                android:gravity="center_vertical|top"
-                                                android:background="@null"
-                                                android:id="@+id/content_write_content"/>
+                                                app:scale_height="19"
+                                                app:scale_left="3"
+                                                app:scale_textsize="5"
+                                                app:scale_width="85" />
 
                                         </com.ssomai.android.scalablelayout.ScalableLayout>
                                     </LinearLayout>
@@ -473,11 +520,11 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/content_write_btn"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/write"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="22dp"
-        android:id="@+id/content_write_btn" />
+        android:src="@drawable/write" />
 </RelativeLayout>
