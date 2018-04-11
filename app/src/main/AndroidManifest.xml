@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.metroContent.MetroContentActivity"></activity>
+        <activity android:name=".ui.metroContent.MetroContentActivity"/>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.content.ContentActivity"></activity>
+        <activity android:name=".ui.contentWrite.WriteContentActivity"
+            android:theme="@style/Dialog"/>
     </application>
 
 </manifest>

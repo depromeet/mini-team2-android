@@ -56,11 +56,12 @@ class ContentPresenter : Contract.Presenter {
     }
 
     // 데이터 가져오기
-    override fun getData(){
-        disposables += api.getContentData(1, 1)
+    override fun getData(boardId: Int, postId: Int){
+        disposables += api.getContentData(boardId, postId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    view.setText(it.title, it.content, it.createdAt)
+                    val time: String? = it.openedAt + " - " + it.closedAt
+                    view.setText(it.title, it.content, it.createdAt, it.phone, time, it.nearestExit)
                 }) {
                     it.printStackTrace()
                 }

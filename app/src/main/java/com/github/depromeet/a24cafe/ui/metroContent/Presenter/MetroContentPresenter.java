@@ -3,7 +3,7 @@ package com.github.depromeet.a24cafe.ui.metroContent.Presenter;
 import android.content.Context;
 import android.util.Log;
 
-import com.github.depromeet.a24cafe.model.MetroContent;
+import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.ui.metroContent.Adapter.MetroAdapterContract;
 import com.github.depromeet.a24cafe.ui.metroContent.Callback.MetroContentCallback;
 import com.github.depromeet.a24cafe.ui.metroContent.Callback.OnItemClickListener;
@@ -56,12 +56,12 @@ public class MetroContentPresenter implements MetroContentContract.Presenter, Me
     }
 
     @Override
-    public void connect() {
+    public void connect(int boardId) {
         model.getContents();
     }
 
     @Override
-    public void onConnectSuccess(List<MetroContent> items) {
+    public void onConnectSuccess(List<CafeContent> items) {
         ArrayList list = new ArrayList(items);
         loadItems(list);
     }
@@ -72,7 +72,8 @@ public class MetroContentPresenter implements MetroContentContract.Presenter, Me
     }
 
     @Override
-    public void onItemClick(int position) {
+    public void onItemClick(CafeContent item, int position) {
         Log.d(TAG, "click " + position);
+        view.startContentActivity(item);
     }
 }

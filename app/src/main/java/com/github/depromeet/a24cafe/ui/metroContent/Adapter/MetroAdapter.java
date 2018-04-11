@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.github.depromeet.a24cafe.model.MetroContent;
+import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.ui.metroContent.Callback.OnItemClickListener;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class MetroAdapter extends RecyclerView.Adapter<MetroViewHolder>
     private static final String TAG = MetroAdapter.class.getSimpleName();
 
     private Context context;
-    private ArrayList<MetroContent> items;
+    private ArrayList<CafeContent> items;
     private OnItemClickListener onItemClickListener;
 
     public MetroAdapter(Context context) {
@@ -58,7 +58,7 @@ public class MetroAdapter extends RecyclerView.Adapter<MetroViewHolder>
     }
 
     @Override
-    public MetroContent getItem(int position) {
+    public CafeContent getItem(int position) {
         return items.get(position);
     }
 
