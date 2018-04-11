@@ -23,6 +23,6 @@ public interface MetroContentContract {
 
         void loadItems(ArrayList items);
 
-        void connect();
+        void connect(int boardId);
     }
 }

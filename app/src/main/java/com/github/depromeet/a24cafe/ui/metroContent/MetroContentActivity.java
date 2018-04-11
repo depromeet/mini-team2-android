@@ -70,10 +70,15 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         presenter.setListViewCallback(adapter);
     }
 
+    private int getBoardId() {
+        int id = getIntent().getIntExtra("boardId", 0);
+        return id;
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.connect();
+        presenter.connect(getBoardId());
     }
 
     @Override
@@ -85,7 +90,8 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
     @Override
     public void startContentActivity(CafeContent item) {
         Intent intent = new Intent(this, ContentActivity.class);
-        intent.putExtra("CafeContent", item);
+        intent.putExtra("boardId", item.getId());
+        intent.putExtra("postId", item.getId());
         startActivity(intent);
     }
 
