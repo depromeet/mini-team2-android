@@ -1,7 +1,7 @@
 package com.github.depromeet.a24cafe.ui.contentWrite;
 
-import android.content.Intent;
-import android.graphics.PointF;
+import android.Manifest;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +14,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.github.depromeet.a24cafe.R;
 import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.ui.contentWrite.Presenter.WriteContentContract;
 import com.github.depromeet.a24cafe.ui.contentWrite.Presenter.WriteContentPresenter;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.skt.Tmap.TMapMarkerItem;
 import com.skt.Tmap.TMapPOIItem;
 import com.skt.Tmap.TMapPoint;
@@ -31,6 +34,7 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import gun0912.tedbottompicker.TedBottomPicker;
 
 public class WriteContentActivity extends AppCompatActivity implements WriteContentContract.View, TMapView.OnLongClickListenerCallback {
     private static final String TAG = WriteContentActivity.class.getSimpleName();
@@ -59,6 +63,16 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
     EditText editPhone;
     @BindView(R.id.content_write_coffee_price)
     EditText editCoffeePrice;
+    @BindView(R.id.write_image)
+    ImageView write_image;
+    @BindView(R.id.write_image_tmp)
+    ScalableLayout write_image_tmp;
+
+
+    @OnClick(R.id.uploadbutton)
+    void click() {
+        setImage();
+    }
 
     private WriteContentPresenter presenter;
     private TMapView tMapView;
@@ -73,7 +87,7 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
         setContentView(R.layout.activity_content_write);
 
         ButterKnife.bind(this);
-
+        checkPermission();
         tMapView = new TMapView(this);
         tMapView.setSKTMapApiKey(getString(R.string.tmap_key));
         tMapView.setOnLongClickListenerCallback(this);
@@ -102,7 +116,7 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
             return;
         }
 
-        if (editPhone.getText().toString().length() > 11 &&  editPhone.getText().toString().length() < 7) {
+        if (editPhone.getText().toString().length() > 11 && editPhone.getText().toString().length() < 7) {
             toast("유효한 번호를 입력해주세요");
             return;
         }
@@ -165,6 +179,60 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
 
     private String getDate() {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
+    }
+
+      private void setImage() {
+        PermissionListener permissionListener = new PermissionListener() {
+
+            @Override
+            public void onPermissionGranted() {
+
+                TedBottomPicker bottomSheetDialogFragment = new TedBottomPicker.Builder(WriteContentActivity.this)
+                        .setOnImageSelectedListener(new TedBottomPicker.OnImageSelectedListener() {
+                            @Override
+                            public void onImageSelected(Uri uri) {
+                                Glide.with(getApplicationContext())
+                                        .load(uri)
+                                        .into(write_image);
+
+                                write_image.setVisibility(View.VISIBLE);
+                                write_image_tmp.setVisibility(View.GONE);
+
+                            }
+                        })
+                        .create();
+
+                bottomSheetDialogFragment.show(getSupportFragmentManager());
+
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+            }
+        };
+
+        new TedPermission(this)
+                .setPermissionListener(permissionListener)
+                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .check();
+    }
+
+    private void checkPermission() {
+        PermissionListener camerapermission = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+            }
+        };
+
+        new TedPermission(getApplicationContext())
+                .setPermissionListener(camerapermission)
+                // .setDeniedMessage("권한 설정 동의를 안하신다면, 나중에 이곳에서 설정해 주세요. [설정] > [권한]")
+                .setPermissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.READ_EXTERNAL_STORAGE)
+                .check();
     }
 
     @Override
