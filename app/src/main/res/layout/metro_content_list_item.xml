@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="metroContent"
+                android:text="cafeContent"
                 app:scale_textsize="6"
                 app:scale_width="104"
                 app:scale_height="11"

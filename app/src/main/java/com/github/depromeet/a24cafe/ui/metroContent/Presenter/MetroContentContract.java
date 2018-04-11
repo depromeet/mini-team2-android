@@ -1,6 +1,6 @@
 package com.github.depromeet.a24cafe.ui.metroContent.Presenter;
 
-import com.github.depromeet.a24cafe.model.MetroContent;
+import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.ui.metroContent.Adapter.MetroAdapterContract;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public interface MetroContentContract {
     interface View {
         void toast(String msg);
 
-        void startContentActivity(MetroContent item);
+        void startContentActivity(CafeContent item);
     }
 
     interface Presenter {

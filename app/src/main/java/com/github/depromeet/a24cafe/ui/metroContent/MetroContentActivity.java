@@ -12,13 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.depromeet.a24cafe.R;
-import com.github.depromeet.a24cafe.model.MetroContent;
+import com.github.depromeet.a24cafe.model.CafeContent;
 import com.github.depromeet.a24cafe.ui.content.ContentActivity;
+import com.github.depromeet.a24cafe.ui.contentWrite.WriteContentActivity;
 import com.github.depromeet.a24cafe.ui.metroContent.Adapter.MetroAdapter;
 import com.github.depromeet.a24cafe.ui.metroContent.Presenter.MetroContentContract;
 import com.github.depromeet.a24cafe.ui.metroContent.Presenter.MetroContentPresenter;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,7 +49,7 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
         btnContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(MetroContentActivity.this, WriteContentActivity.class));
             }
         });
     }
@@ -84,9 +83,9 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
     }
 
     @Override
-    public void startContentActivity(MetroContent item) {
+    public void startContentActivity(CafeContent item) {
         Intent intent = new Intent(this, ContentActivity.class);
-        intent.putExtra("MetroContent", item);
+        intent.putExtra("CafeContent", item);
         startActivity(intent);
     }
 
