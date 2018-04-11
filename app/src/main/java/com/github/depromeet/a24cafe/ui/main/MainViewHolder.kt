@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.github.depromeet.a24cafe.R
 import com.github.depromeet.a24cafe.api.apiService
 
-class MainViewHolder(itemView: View, val itemClick: (Int) -> Unit) : RecyclerView.ViewHolder(itemView) {
+class MainViewHolder(itemView: View, val itemClick: (apiService.mainItem) -> Unit) : RecyclerView.ViewHolder(itemView) {
 
     val location = itemView.findViewById<TextView>(R.id.mainlist_location)  // 장소 이름
     val image = itemView.findViewById<ImageView>(R.id.mainlist_background)  // 배경 이미지
@@ -27,7 +27,7 @@ class MainViewHolder(itemView: View, val itemClick: (Int) -> Unit) : RecyclerVie
         locationCount.text = "17곳"
 
         layer.setOnClickListener {
-            itemClick(item[position].id)
+            itemClick(item.get(position))
         }
     }
 
