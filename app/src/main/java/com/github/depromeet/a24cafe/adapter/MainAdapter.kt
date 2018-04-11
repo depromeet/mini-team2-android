@@ -9,7 +9,7 @@ import com.github.depromeet.a24cafe.R
 import com.github.depromeet.a24cafe.api.apiService
 import com.github.depromeet.a24cafe.ui.main.MainViewHolder
 
-class MainAdapter(val context: Context, val itemClick: (Int) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>(), MainAdapterContract.View, MainAdapterContract.Model {
+class MainAdapter(val context: Context, val itemClick: (apiService.mainItem) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>(), MainAdapterContract.View, MainAdapterContract.Model {
 
 
     private lateinit var item: MutableList<apiService.mainItem>

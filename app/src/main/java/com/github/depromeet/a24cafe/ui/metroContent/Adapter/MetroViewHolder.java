@@ -54,7 +54,15 @@ public class MetroViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(final CafeContent cafeContent, final int position) {
         tvCafeName.setText(cafeContent.getTitle());
-        price.setText("매일 09:00 ~ 04:00");
+
+        String open = String.valueOf(cafeContent.getOpenedAt());
+        String close = String.valueOf(cafeContent.getClosedAt());
+        if (cafeContent.getOpenedAt() < 10)
+            open = "0" + cafeContent.getOpenedAt();
+        if (cafeContent.getClosedAt() < 10)
+            close = "0" + cafeContent.getClosedAt();
+
+        price.setText(open + ":00 ~ " + close +":00");
         time.setText("아메리카노 4,500원 부터~");
 
         linearLayout.setOnTouchListener(new View.OnTouchListener() {

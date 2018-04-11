@@ -1,5 +1,6 @@
 package com.github.depromeet.a24cafe.ui.contentWrite;
 
+import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -54,6 +55,10 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
     EditText editNearestExit;
     @BindView(R.id.content_write_content)
     EditText editContent;
+    @BindView(R.id.content_write_phone)
+    EditText editPhone;
+    @BindView(R.id.content_write_coffee_price)
+    EditText editCoffeePrice;
 
     private WriteContentPresenter presenter;
     private TMapView tMapView;
@@ -92,6 +97,16 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
             return;
         }
 
+        if (editPhone.getText().toString().equals("")) {
+            toast("카페 전화번호를 입력해주세요");
+            return;
+        }
+
+        if (editPhone.getText().toString().length() > 11 &&  editPhone.getText().toString().length() < 7) {
+            toast("유효한 번호를 입력해주세요");
+            return;
+        }
+
         if (editStartTime.getText().toString().equals("")) {
             toast("시작 시간을 입력해주세요");
             return;
@@ -120,8 +135,8 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
             return;
         }
 
-        if (editContent.getText().toString().equals("")) {
-            toast("작성평을 입력해주세요");
+        if (editNearestExit.getText().toString().equals("")) {
+            toast("커피가격을 입력해 주세요");
             return;
         }
 
@@ -130,14 +145,20 @@ public class WriteContentActivity extends AppCompatActivity implements WriteCont
             return;
         }
 
+        if (editContent.getText().toString().equals("")) {
+            toast("작성평을 입력해주세요");
+            return;
+        }
+
+
         CafeContent content = new CafeContent(
-                1,
+                getIntent().getIntExtra("boardId", -1),
                 editCafeName.getText().toString(),
                 editContent.getText().toString(),
                 lat, lon,
                 getDate(),
                 startTime, endTime,
-                "00012341234",
+                editPhone.getText().toString(),
                 Integer.parseInt(editNearestExit.getText().toString()));
         presenter.connect(content);
     }

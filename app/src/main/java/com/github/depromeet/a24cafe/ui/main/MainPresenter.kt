@@ -30,7 +30,8 @@ class MainPresenter : Contract.Presenter {
 
         val adapter = MainAdapter(context) {
             val intent = Intent(context, MetroContentActivity::class.java)
-            intent.putExtra("boardId", it)
+            intent.putExtra("boardId", it.id)
+            intent.putExtra("name", it.name)
             context.startActivity(intent)
         }
 
@@ -42,7 +43,6 @@ class MainPresenter : Contract.Presenter {
     }
     // 데이터 받아오기
     private fun getData() {
-
         disposables += api.getMainBoardList()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

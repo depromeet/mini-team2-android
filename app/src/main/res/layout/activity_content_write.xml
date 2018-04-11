@@ -86,12 +86,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:scale_base_width="112"
-                    app:scale_base_height="37">
+                    app:scale_base_height="40">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:scale_width="103"
-                        app:scale_height="37"
+                        app:scale_height="40"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -99,12 +99,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:scale_base_width="103"
-                            app:scale_base_height="10">
+                            app:scale_base_height="8">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 app:scale_width="103"
-                                app:scale_height="9.5">
+                                app:scale_height="8">
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -133,12 +133,46 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:scale_base_width="103"
-                            app:scale_base_height="10">
+                            app:scale_base_height="8">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 app:scale_width="103"
-                                app:scale_height="9.5">
+                                app:scale_height="8">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="전화번호"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentStart="true"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:hint="전화번호를 입력해주세요"
+                                    android:textSize="10dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@null"
+                                    android:maxLines="1"
+                                    android:maxLength="11"
+                                    android:inputType="number"
+                                    android:gravity="right|center_vertical"
+                                    android:id="@+id/content_write_phone"/>
+                            </RelativeLayout>
+
+                        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+                        <com.ssomai.android.scalablelayout.ScalableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:scale_base_width="103"
+                            app:scale_base_height="8">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:scale_width="103"
+                                app:scale_height="8">
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -199,12 +233,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:scale_base_width="103"
-                            app:scale_base_height="10">
+                            app:scale_base_height="8">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 app:scale_width="103"
-                                app:scale_height="9.5">
+                                app:scale_height="8">
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -226,6 +260,40 @@
                                     android:gravity="right|center_vertical"
                                     android:id="@+id/nearestExit"/>
 
+                            </RelativeLayout>
+
+                        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+                        <com.ssomai.android.scalablelayout.ScalableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:scale_base_width="103"
+                            app:scale_base_height="8">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:scale_width="103"
+                                app:scale_height="8">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="커피가격"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentStart="true"/>
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:hint="커피가격을 입력해주세요"
+                                    android:textSize="10dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@null"
+                                    android:maxLines="1"
+                                    android:maxLength="5"
+                                    android:inputType="number"
+                                    android:gravity="right|center_vertical"
+                                    android:id="@+id/content_write_coffee_price"/>
                             </RelativeLayout>
 
                         </com.ssomai.android.scalablelayout.ScalableLayout>
@@ -383,8 +451,8 @@
                                                 android:lines="20"
                                                 android:maxLines="20"
                                                 android:hint="작성자의 평을 적어주세요"
-                                                android:layout_gravity="center_horizontal"
-                                                android:gravity="center_vertical"
+                                                android:layout_gravity="center_horizontal|top"
+                                                android:gravity="center_vertical|top"
                                                 android:background="@null"
                                                 android:id="@+id/content_write_content"/>
 
