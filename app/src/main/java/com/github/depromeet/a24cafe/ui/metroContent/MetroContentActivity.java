@@ -60,6 +60,9 @@ public class MetroContentActivity extends AppCompatActivity implements MetroCont
     private void init() {
         ButterKnife.bind(this);
 
+        tvMetroName.setText(getIntent().getStringExtra("name")
+                    +"역의 야작카페");
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
