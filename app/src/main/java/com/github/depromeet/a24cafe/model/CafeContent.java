@@ -11,11 +11,11 @@ public class CafeContent implements Serializable {
     private double longitude;
     private String createAt;
     private int openedAt;
-    private int closeAt;
+    private int closedAt;
     private String phone;
     private int nearestExit;
 
-    public CafeContent(int id, int boardId, String title, String content, double latitude, double longitude, String createAt, int openedAt, int closeAt, String phone, int nearestExit) {
+    public CafeContent(int id, int boardId, String title, String content, double latitude, double longitude, String createAt, int openedAt, int closedAt, String phone, int nearestExit) {
         this.id = id;
         this.boardId = boardId;
         this.title = title;
@@ -24,13 +24,13 @@ public class CafeContent implements Serializable {
         this.longitude = longitude;
         this.createAt = createAt;
         this.openedAt = openedAt;
-        this.closeAt = closeAt;
+        this.closedAt = closedAt;
         this.phone = phone;
         this.nearestExit = nearestExit;
     }
 
 
-    public CafeContent(int boardId, String title, String content, double latitude, double longitude, String createAt, int openedAt, int closeAt, String phone, int nearestExit) {
+    public CafeContent(int boardId, String title, String content, double latitude, double longitude, String createAt, int openedAt, int closedAt, String phone, int nearestExit) {
         this.boardId = boardId;
         this.title = title;
         this.content = content;
@@ -38,7 +38,7 @@ public class CafeContent implements Serializable {
         this.longitude = longitude;
         this.createAt = createAt;
         this.openedAt = openedAt;
-        this.closeAt = closeAt;
+        this.closedAt = closedAt;
         this.phone = phone;
         this.nearestExit = nearestExit;
     }
@@ -107,12 +107,12 @@ public class CafeContent implements Serializable {
         this.openedAt = openedAt;
     }
 
-    public int getCloseAt() {
-        return closeAt;
+    public int getClosedAt() {
+        return closedAt;
     }
 
-    public void setCloseAt(int closeAt) {
-        this.closeAt = closeAt;
+    public void setClosedAt(int closedAt) {
+        this.closedAt = closedAt;
     }
 
     public String getPhone() {

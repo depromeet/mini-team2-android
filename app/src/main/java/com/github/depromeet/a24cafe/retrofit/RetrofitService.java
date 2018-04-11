@@ -17,7 +17,7 @@ public interface RetrofitService {
     );
 
     @POST("/api/boards/{boardId}/posts")
-    Call<CafeContent> postContent(
+    Call<Void> postContent(
             @Path("boardId") int boardId,
             @Body CafeContent cafeContent
     );
