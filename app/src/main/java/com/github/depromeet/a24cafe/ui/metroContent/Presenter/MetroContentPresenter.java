@@ -56,7 +56,7 @@ public class MetroContentPresenter implements MetroContentContract.Presenter, Me
     }
 
     @Override
-    public void connect() {
+    public void connect(int boardId) {
         model.getContents();
     }
 

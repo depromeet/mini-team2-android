@@ -17,6 +17,6 @@ interface Contract{
         fun mapSetting()
 
         // 데이터 불러오기
-        fun getData()
+        fun getData(boardId: Int, postId: Int)
     }
 }

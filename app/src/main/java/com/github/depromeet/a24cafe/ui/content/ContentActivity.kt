@@ -22,12 +22,16 @@ class ContentActivity : AppCompatActivity(), Contract.View {
         presenter = ContentPresenter()
         presenter.init(this, this)
         presenter.mapSetting()
-        presenter.getData()
+        presenter.getData(getBoardId(), getPostId())
 
     }
 
-    private fun getContentId(): Int {
-        return intent.getIntExtra("id", 0)
+    private fun getBoardId(): Int {
+        return intent.getIntExtra("boardId", 0)
+    }
+
+    private fun getPostId(): Int{
+        return intent.getIntExtra("postId", 0)
     }
 
     override fun setMap(): LinearLayout {
